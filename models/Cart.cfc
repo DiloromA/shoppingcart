@@ -1,7 +1,8 @@
 component extends="Model" {
 
 	function config() {
-		belongsTo("cart");
+		belongsTo("customer");
+        hasMany("products");
 	}
-
 }
+

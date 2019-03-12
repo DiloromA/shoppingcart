@@ -5,10 +5,14 @@
 	// See http://docs.cfwheels.org/docs/routing for more info.
 
 	mapper()
-		.resources("users")
+		.resources("products")
+		.resources("customers")
+		.get(name="login", to="sessions##new")
+  		.get(name="logout", to="sessions##delete")
+  		.post(name="authenticate", to="sessions##create")
+		
 
-.resources("products")
-.resources("customers")
+.resources("carts")
 // CLI-Appends-Herehttp://download.eclipse.org/egit/updates http://download.eclipse.org/egit/updates http://download.eclipse.org/egit/updates http://download.eclipse.org/egit/updates http://download.eclipse.org/egit/updates http://download.eclipse.org/egit/updates 
 		// The "wildcard" call below enables automatic mapping of "controller/action" type routes.
 		// This way you don't need to explicitly add a route every time you create a new action in a controller.
@@ -18,5 +22,7 @@
 		// You can, for example, change "wheels##wheels" to "home##index" to call the "index" action on the "home" controller instead.
 		.root(to="products##index", method="get")
 	.end();
+	
+	
 
 </cfscript>
