@@ -5,30 +5,30 @@
 	 * @hint Returns the customer currently logged in.
 	 */
 	 public any function currentCustomer() {
-	 	if ( signedIn() ) {
+	 	if ( loggedIn() ) {
 	 		currentCustomer = model("customer").findByKey(session.currentCustomer.id);
 	 		return currentCustomer;
 	 	}
 	 }
 	/**
-	 * @hint Is the customer signed in?
+	 * @hint Is the customer logged in?
 	 */
-	 public boolean function signedIn() {
+	 public boolean function loggedIn() {
 	 	return StructKeyExists(session, "currentCustomer"); 
 	 }
 	/**
-	 * @hint Signs in the customer.
+	 * @hint Logs in the customer.
 	 */
-	 public void function signIn(required customer) {
+	 public void function logIn(required customer) {
 	 	session.currentCustomer = {
 	 		id = arguments.customer.id
 	 	};
 	 }
 	/**
-	 * @hint Signs the customer out.
+	 * @hint Logs the customer out.
 	 */
-	 public void function signOut() {
-	 	if ( signedIn() ) {
+	 public void function logOut() {
+	 	if ( loggedIn() ) {
 	 		StructDelete(session, "currentCustomer");
 	 	}
 	 }

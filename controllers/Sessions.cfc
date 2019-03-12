@@ -28,7 +28,7 @@ component
 			renderPage(action="new");
 		}
 		else {
-			signIn(customer);
+			logIn(customer);
 			redirectBackOr(controller="customers", action="index");
 		}
 	}
@@ -37,7 +37,7 @@ component
 	 * @hint Logs out the customer.
 	 */
 	public void function delete() {
-		signOut();
+		logOut();
 		redirectTo(route="home");
 	}
 }

@@ -31,9 +31,11 @@
         }
     ],
     "dependencies":{
-        "cfwheels-flashmessages-bootstrap":"^1.0.2"
+        "cfwheels-flashmessages-bootstrap":"^1.0.2",
+        "cfwheels-bcrypt":"^1.0.2"
     },
     "installPaths":{
-        "cfwheels-flashmessages-bootstrap":"plugins/FlashMessagesBootstrap/"
+        "cfwheels-flashmessages-bootstrap":"plugins/FlashMessagesBootstrap/",
+        "cfwheels-bcrypt":"plugins/bcrypt/"
     }
 }

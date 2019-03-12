@@ -46,8 +46,13 @@
 <![endif]-->
 <!--=============== Header ==========-->
 <header>
+	<div>
+		<button>#linkTo(text="SignUp", controller="customers", action="new")#</button> 
+		<button>#linkTo(text="Login", name="login", controller="sessions", action="new")#</button>
+		<button>#linkTo(text="My Cart", controller="carts", action="index")#</button>
+	</div>
     <div class="container">
-	   <h1 class="site-title">#linkTo(route="root", text="myapp")#</h1>
+	   <h1 class="site-title">#linkTo(route="root", text="Online Shopping")#</h1>
     </div>
 </header>
 <!--=============== Content ==============-->
