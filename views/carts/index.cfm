@@ -9,7 +9,7 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>User_id</th>
+					<th>Customer_id</th>
 					<th>Product_id</th>
                     <!--- CLI-Appends-thead-Here --->
 					<th>Actions</th>
@@ -22,7 +22,7 @@
 						#id#
 					</td>
 					<td>
-						#user_id#
+						#customer_id#
 					</td>
 					<td>
 						#product_id#

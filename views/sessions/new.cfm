@@ -1,7 +1,7 @@
-<!--- Customer Signin Form --->
+<!--- Customer Login Form --->
 
 <cfoutput>
-<h1>Signin Customer</h1>
+<h1>Login Customer</h1>
 #startFormTag(action="create")#
 <label for="email">E-mail Address</label>
 #textFieldTag(name="email")#

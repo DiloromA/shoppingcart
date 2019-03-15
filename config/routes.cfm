@@ -7,16 +7,17 @@
 	mapper()
 		.resources("products")
 		.resources("customers")
+		.resources("carts")
 		.get(name="login", to="sessions##new")
-  		.get(name="logout", to="sessions##delete")
-  		.post(name="authenticate", to="sessions##create")
+  		.delete(name="logout", to="sessions##delete")
+  		.post(name="login", to="sessions##create")
 		
 
-.resources("carts")
+
 // CLI-Appends-Herehttp://download.eclipse.org/egit/updates http://download.eclipse.org/egit/updates http://download.eclipse.org/egit/updates http://download.eclipse.org/egit/updates http://download.eclipse.org/egit/updates http://download.eclipse.org/egit/updates 
 		// The "wildcard" call below enables automatic mapping of "controller/action" type routes.
 		// This way you don't need to explicitly add a route every time you create a new action in a controller.
-		.wildcard()
+		//.wildcard()
 
 		// The root route below is the one that will be called on your application's home page (e.g. http://127.0.0.1/).
 		// You can, for example, change "wheels##wheels" to "home##index" to call the "index" action on the "home" controller instead.

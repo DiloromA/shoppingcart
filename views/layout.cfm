@@ -47,7 +47,10 @@
 <!--=============== Header ==========-->
 <header>
 	<div>
-		<button>#linkTo(text="SignUp", controller="customers", action="new")#</button> 
+		<button>#linkTo(text="Signup", controller="customers", action="new")#</button> 
+	<!---	<cfif customer.loggedIn()>
+			<button>#linkTo(text="Logout", name="logout", controller="sessions", action="delete")#</button>
+		</cfif>--->
 		<button>#linkTo(text="Login", name="login", controller="sessions", action="new")#</button>
 		<button>#linkTo(text="My Cart", controller="carts", action="index")#</button>
 	</div>

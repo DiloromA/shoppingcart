@@ -21,28 +21,29 @@
 component extends="wheels.Controller" {
 	function config() {
 		protectsFromForgery();
-		
+
+
 		/**
 	 * @hint Constructor
 	 */
 	public void function init() {
-		filters(through="getCurrentUser");
+		filters(through="getCurrentCustomer");
 	}
 
 	// --------------------------------------------------
 	// Filters
 
 	/**
-	 * @hint Loads the current user in session.
+	 * @hint Loads the current customer in session.
 	 */
-	private void function getCurrentUser() {
+	private void function getCurrentCustomer() {
 		if ( loggedIn() ) {
-			currentUser = currentUser();
+			currentCustomer = currentCurrent();
 		}
 	}
 
 	/*
-	 * @hint Ensures user is authenticated.
+	 * @hint Ensures customer is authenticated.
 	 */
 	private void function isAuthenticated() {
 		if ( ! loggedIn() ) {
@@ -52,7 +53,7 @@ component extends="wheels.Controller" {
 	}
 
 	/*
-	 * @hint Ensures it's the correct user.
+	 * @hint Ensures it's the correct customer.
 	 */
 	private void function isAuthorized() {
 		customer = model("customer").findByKey(params.key);
@@ -62,7 +63,7 @@ component extends="wheels.Controller" {
 	}
 
 	/**
-	 * @hint Redirects the user away if its logged in.
+	 * @hint Redirects the customer away if its logged in.
 	 */
 	private void function redirectIfLoggedIn() {
 		if ( loggedIn() ) redirectTo(controller="customers", action="index");

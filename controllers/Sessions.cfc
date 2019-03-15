@@ -22,10 +22,13 @@ component
 	 * @hint Logs in the customer.
 	 */
 	public void function create() {
-		var user = model("customer").findOneByEmail(params.email);
-		if ( ! IsObject(customer) || ! customer.authenticate(params.password) ) {
+			
+		var customer = model("customer").findOneByEmail(params.email);
+
+		if ( ! IsObject(customer) || customer.password != params.password){
 			flashInsert(message="We could not log you in. Please try that again.", messageType="error");
-			renderPage(action="new");
+			//renderPage(action="new");
+			redirectTo(route="home");
 		}
 		else {
 			logIn(customer);
